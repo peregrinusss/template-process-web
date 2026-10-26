@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Golos Text", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: rgba(0, 121, 193, 0.18);
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-3xl border border-line/70 shadow-card;
+  }
+
+  .input-base {
+    @apply w-full px-3.5 py-2.5 rounded-xl border border-line bg-white
+           text-[15px] text-ink placeholder:text-ink-200
+           hover:border-ink-200
+           focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10
+           transition-colors;
+  }
+
+  .autosize {
+    field-sizing: content;
+    resize: vertical;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 h-11 px-5 rounded-xl
+           bg-primary text-white text-sm font-medium
+           hover:bg-primary-600 transition-colors
+           disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  .btn-link {
+    @apply inline-flex items-center gap-1.5 text-sm text-ink-400 hover:text-primary transition-colors;
+  }
+}
